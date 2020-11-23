@@ -1,0 +1,111 @@
+{
+    "id": "velican",
+    "name": "Velican Blogging Engine",
+    "packaging_format": 1,
+    "description": {
+        "en": "Javascript application to edit your files and WebDAV endpoint to store the files"
+    },
+    "version": "1.0~ynh3",
+    "url": "https://github.com/katomaso/velican_ynh",
+    "license": "GPL-3.0-only",
+    "maintainer": {
+        "name": "Tomas Peterka",
+        "email": "tomas@peterka.me"
+    },
+    "requirements": {
+        "yunohost": ">= 3.6.0"
+    },
+    "multi_instance": false,
+    "services": [
+        "nginx",
+    ],
+    "dependencies": [
+        "pelican"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain",
+                "ask": {
+                    "en": "Choose a domain for your Webapp",
+                    "fr": "Choisissez un domaine pour votre Webapp"
+                },
+                "example": "domain.org"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "ask": {
+                    "en": "Choose a path for your Webapp",
+                    "fr": "Choisissez un chemin pour votre Webapp"
+                },
+                "example": "/",
+                "default": "/"
+            },
+            {
+                "name": "password",
+                "type": "password",
+                "optional": true,
+                "ask": {
+                    "en": "Admin user password"
+                },
+                "example": "S0meStrongP^^s"
+            },
+            {
+                "name": "theme_name",
+                "type": "string",
+                "ask": {
+                    "en": "Name of the root folder in the ZIP archive"
+                },
+                "example": "mytheme",
+                "default": "mytheme"
+            },
+            {
+                "name": "theme_url",
+                "type": "string",
+                "ask": {
+                    "en": "URL that points to ZIPped theme"
+                },
+                "example": "github.com/myprofile/mytheme/master.zip",
+                "default": ""
+            },
+            {
+                "name": "author",
+                "type": "string",
+                "ask": {
+                    "en": "Author"
+                },
+                "example": "Your Name",
+                "default": ""
+            },
+            {
+                "name": "title",
+                "type": "string",
+                "ask": {
+                    "en": "Site title"
+                },
+                "example": "My Blog",
+                "default": ""
+            },
+            {
+                "name": "subtitle",
+                "type": "string",
+                "ask": {
+                    "en": "Site subtitle "
+                },
+                "example": "Where all my knowledge is stored",
+                "default": ""
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "ask": {
+                    "en": "Is it a public website?",
+                    "fr": "Est-ce un site public ?"
+                },
+                "default": true
+            }
+        ]
+    }
+}

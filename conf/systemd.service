@@ -1,0 +1,12 @@
+[Install]
+WantedBy=multi-user.target
+
+[Unit]
+Description=Velican regen script
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=__APPPATH__/content
+ExecStart=/usr/bin/python3 __APPPATH__/watcher.py
