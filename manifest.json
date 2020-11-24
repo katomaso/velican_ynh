@@ -20,7 +20,8 @@
         "nginx",
     ],
     "dependencies": [
-        "pelican"
+        "pelican",
+        "unzip"
     ],
     "arguments": {
         "install" : [

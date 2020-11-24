@@ -1,0 +1,7 @@
+SOURCE_URL=https://github.com/katomaso/velican/archive/master.zip
+SOURCE_SUM=792450ea48c118d479a5725dc1e12e8e495167658b4bd2e3c55c4502e5ada8e5
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=binary
+SOURCE_IN_SUBDIR=true
+SOURCE_FILENAME=publisher.py
+SOURCE_EXTRACT=true

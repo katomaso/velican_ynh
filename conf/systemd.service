@@ -7,6 +7,6 @@ Description=Velican regen script
 [Service]
 Type=simple
 User=www-data
-Group=www-data
-WorkingDirectory=__APPPATH__/content
-ExecStart=/usr/bin/python3 __APPPATH__/watcher.py
+Group=__APP__
+WorkingDirectory=__APP_PATH__
+ExecStart=/usr/bin/python3 __APP_PATH__/publisher.py __APP_PATH__

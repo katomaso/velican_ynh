@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import os.path
 
 AUTHOR = '__AUTHOR__'
-SITENAME = '__TITLE'
+SITENAME = '__TITLE__'
 SITEURL = '__DOMAIN____PATH__'
 SITESUBTITLE = "__SUBTITLE__"
 MENUITEMS = [
