@@ -1,0 +1,63 @@
+#!/bin/bash
+
+#=================================================
+# GENERIC START
+#=================================================
+
+# Source YunoHost helpers
+source /usr/share/yunohost/helpers
+
+# Stop script if errors
+set -u
+
+ynh_script_progression --message="Loading installation settings..."
+
+# Retrieve arguments
+domain=$(ynh_app_setting_get --app $app --key domain)
+app_path=$(ynh_app_setting_get --app=$app --key=app_path)
+final_path=$(ynh_app_setting_get --app=$app --key=final_path)
+
+#=================================================
+# STANDARD REMOVE
+#=================================================
+
+ynh_script_progression --message="Stoping services..."
+
+ynh_systemd_action --service_name $app --action stop
+
+# remove sso config to unprotect domain.tld/seafhttp in /etc/ssowat/conf.json.persistent
+ynh_script_progression --message="Cleaning SSO configuration..."
+python3 ../conf/remove_sso_conf.py
+
+ynh_script_progression --message="Removing files"
+ynh_secure_remove --file=$app_path
+ynh_secure_remove --file=$final_path
+
+# Remove systemd service
+ynh_script_progression --message="Removing systemd units..."
+ynh_remove_systemd_config --service $app
+
+# Remove user
+ynh_script_progression --message="Removing the dedicated system user..."
+ynh_system_user_delete --username $app
+
+# Remove dependencies
+ynh_script_progression --message="Removing dependencies" --weight=10
+ynh_remove_app_dependencies
+
+# Remove nginx config
+ynh_script_progression --message="Removing nginx configuration..."
+ynh_remove_nginx_config
+
+# Remove logrotate
+ynh_remove_logrotate
+
+# Remove the dedicated fail2ban config
+#TODO: implement fail2ban for WebDAV auth
+#ynh_script_progression --message="Removing fail2ban configuration..."
+#ynh_remove_fail2ban_config
+
+ynh_script_progression --message="Removing seafile service..."
+yunohost service remove $app
+
+ynh_script_progression --message="Removal of $app completed" --last
