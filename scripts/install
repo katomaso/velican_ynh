@@ -103,6 +103,7 @@ rm theme.zip
 # SYSTEMD CONFIGURATION
 #=================================================
 ynh_add_systemd_config --others_var "app_path"
+yunohost service add $app
 
 #=================================================
 # NGINX CONFIGURATION
