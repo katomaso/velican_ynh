@@ -125,7 +125,7 @@ ynh_system_user_create --username=$app --home_dir=$app_path
 #=================================================
 # MODIFY A CONFIG FILE
 #=================================================
-config=$final_path/miniflux.conf
+config=$final_path/pelicanconf.py
 
 cp ../conf/pelicanconf.py $config
 ynh_replace_string --match_string="__APPPATH__" --replace_string="$app_path" --target_file="$config"
