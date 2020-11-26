@@ -88,8 +88,8 @@ rm readtime.zip
 # install neighbors plugin
 wget -O neighbors.zip https://github.com/pelican-plugins/neighbors/archive/main.zip
 unzip neighbors.zip
-mv neighbors-master/pelican/plugins/neighbors $app_path/plugins/
-rm -rf neighbors.zip neighbors-master
+mv neighbors-main/pelican/plugins/neighbors $app_path/plugins/
+rm -rf neighbors.zip neighbors-main
 
 # install user-provided theme
 wget -O theme.zip $theme_url

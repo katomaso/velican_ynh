@@ -12,6 +12,8 @@ set -u
 
 ynh_script_progression --message="Loading installation settings..."
 
+app=$YNH_APP_INSTANCE_NAME
+
 # Retrieve arguments
 domain=$(ynh_app_setting_get --app $app --key domain)
 app_path=$(ynh_app_setting_get --app=$app --key=app_path)
