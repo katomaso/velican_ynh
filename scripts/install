@@ -111,7 +111,7 @@ yunohost service add $app
 ynh_script_progression --message="Configuring nginx web server..." --weight=2
 
 # Create a dedicated nginx config
-ynh_add_nginx_config
+ynh_add_nginx_config "app_path"
 echo "admin:$(openssl passwd -crypt "$password")" > $app_path/.passwd
 
 #=================================================
