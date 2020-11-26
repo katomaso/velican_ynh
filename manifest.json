@@ -13,15 +13,13 @@
         "email": "tomas@peterka.me"
     },
     "requirements": {
-        "yunohost": ">= 3.6.0"
+        "yunohost": ">= 3.6.0",
+        "pelican": ">= 4.0.1",
+        "unzip": ">= 6.0"
     },
     "multi_instance": false,
     "services": [
-        "nginx",
-    ],
-    "dependencies": [
-        "pelican",
-        "unzip"
+        "nginx"
     ],
     "arguments": {
         "install" : [
