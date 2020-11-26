@@ -64,7 +64,7 @@ ynh_app_setting_set --app=$app --key=theme_url --value=$theme_url
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
-ynh_install_app_dependencies $pkg_dependencies
+ynh_install_app_dependencies unzip pelican
 
 #=================================================
 # DOWNLOAD AND EXTRACT SOURCE
