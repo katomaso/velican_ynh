@@ -146,6 +146,8 @@ mkdir -p $final_path
 chmod u+s $final_path
 chown www-data:www-data $final_path
 chown :www-data $app_path/.passwd
+
+mkdir $app_path/content
 chown :www-data $app_path/content
 chmod g+ws $app_path/content
 
