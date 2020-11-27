@@ -32,6 +32,7 @@ app_path=/home/yunohost.app/$app
 theme_url=$YNH_APP_ARG_THEME_URL
 theme_name=$YNH_APP_ARG_THEME_NAME
 
+author=$YNH_APP_ARG_AUTHOR
 title=$YNH_APP_ARG_TITLE
 subtitle=$YNH_APP_ARG_SUBTITLE
 
